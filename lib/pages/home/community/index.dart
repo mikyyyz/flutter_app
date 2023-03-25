@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/chat/ui/theme.dart';
+//import 'package:flutter_app/chat/ui/theme.dart';
 
 // 社区
 class PageViewCommunity extends StatefulWidget {

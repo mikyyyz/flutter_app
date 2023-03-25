@@ -43,7 +43,60 @@ class _HomeState extends State<Home> {
         onPressed: () {
           Get.toNamed('/publish');
         },
+        child: const Icon(
+          Icons.add
+        ),
+      ),
+      resizeToAvoidBottomInset: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              barItem(curPage == 0, 0, icon: Icons.home_rounded, text: '首页'),
+              barItem(curPage == 1, 1, icon: Icons.access_alarm_rounded, text: '社区'),
+              const SizedBox(
+                width: 48,
+              ),
+              barItem(curPage == 2, 2, icon: Icons.message_rounded, text: '消息'),
+              barItem(curPage == 3, 3, icon: Icons.person_2_rounded, text: '我的')
+            ],
+          ),
+        ),
       ),
     );
   }
+
+  IconButton barItem(
+  bool active,
+  int initPage,
+  {required IconData icon,
+   required String text
+  }
+) {
+  return IconButton(
+    padding: const EdgeInsets.all(0),
+    color: active ? ChatTheme.primary : ChatTheme.secondary,
+    icon: Column(
+      children: [
+        Icon(icon),
+        Text(
+          text,
+          style: TextStyle(
+            color: active ? ChatTheme.primary : ChatTheme.secondary
+          ),
+        )
+      ],
+    ),
+    onPressed: () {
+      setState(() {
+        curPage = initPage;
+        _pageController.jumpToPage(curPage);
+      });
+    },
+  );
+}
 }

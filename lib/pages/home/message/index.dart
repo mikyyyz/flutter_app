@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/chat/ui/theme.dart';
+//import 'package:flutter_app/chat/ui/theme.dart';
 
 class PageViewMessage extends StatefulWidget {
   const PageViewMessage({ Key? key }): super(key: key);

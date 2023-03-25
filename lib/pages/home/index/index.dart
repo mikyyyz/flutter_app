@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/chat/ui/theme.dart';
+//import 'package:flutter_app/chat/ui/theme.dart';
 
 class PageViewIndex extends StatefulWidget {
   const PageViewIndex({ Key? key }): super(key: key);
@@ -13,14 +14,13 @@ class _PageViewIndexState extends State<PageViewIndex> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '首页',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('首页')),
-        body: const Center(
-          child: TooltipSample(),
-        ),
-      ),
+    return Column(
+      children: [
+        AppBar(
+          title: const Text('首页'),
+          automaticallyImplyLeading: false,
+        )
+      ],
     );
   }
 }
